@@ -1,4 +1,4 @@
-from flask import Flask, url_for
+from flask import Flask, url_for, render_template
 
 
 def is_prime(n: int) -> bool:
@@ -14,12 +14,25 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return 'Главная'
+
+
 @app.route('/news')
 def news():
-    return 'Новости'
+    context = {'title': 'News',
+               'text': 'Новость, получается?'}
+    answ = ['Кошка упала', 'Яблоко зелёное', 
+            'Пароль крутой', 'Вес большой']
+    return render_template(
+        'index.html', 
+        answ=answ
+        )
+
+
 @app.route('/news_detail/<int:id>')
 def news_detail(id: int):
     return f'Новость {id}'
+
+
 @app.route('/primes/<int:n>')
 def prime(n: int):
     answ, i = [], 2
