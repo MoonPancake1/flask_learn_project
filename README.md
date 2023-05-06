@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 4. Создайте файл .env и укажите настройки подключения к БД и другие параметры.
 ```commandline
-DATABASE_URI=sqlite:///db.sqlite3
+DATABASE_URL=sqlite:///db.sqlite3
 SECRET_KEY=YOUR_SECRET_KEY
 ```
 
