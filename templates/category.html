@@ -3,7 +3,8 @@
   Главная страница
 {% endblock title %}
 {% block content %}
-  <h1>Главная</h1>
+  <h1>Категория: {{ category_name }}</h1>
+  <p>Количество новостей в категории: <span class="badge badge-primary">{{ news|length }}</span></p>
   <hr>
   {% for news in news %}
   <div class="card mb-3">
